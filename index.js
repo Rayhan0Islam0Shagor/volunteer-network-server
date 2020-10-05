@@ -17,7 +17,9 @@ const port = process.env.PORT || 5000
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-
+app.get('/', (req, res) => {
+    res.send('Server is ready for you. Sir!')
+})
 
 client.connect(err => {
     const eventCollection = client.db("socialWork").collection("events");
